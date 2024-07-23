@@ -1,0 +1,430 @@
+@import url("./resets.css");
+@import url("./variables.css");
+@import url("./fonts.css");
+@import url("./queries.css");
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+html.dark {
+    --primary-color: 255, 255, 255;
+    --secondary-color: 0, 0, 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--primary-color));
+    border-radius: 9999px;
+}
+
+body {
+    background-color: rgb(var(--secondary-color));
+    color: rgb(var(--primary-color));
+    transition: background-color 500ms ease, color 500ms ease;
+}
+
+body.scroll-locked {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    z-index: 1000;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(var(--secondary-color), 0.8);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    height: var(--header-height);
+    overflow: hidden;
+    transition: top 500ms ease, background-color 500ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.header--pop-up {
+    top: 0;
+}
+
+.logo {
+    font-family: "Reenie-Beanie";
+    font-size: 3rem;
+}
+
+.header__interactive {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__navigation {
+    display: flex;
+    align-items: center;
+}
+
+.header__navigation-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.burger-button {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    cursor: pointer;
+}
+
+.burger-button__slice {
+    width: 1.5rem;
+    height: 0.125rem;
+    background-color: rgb(var(--primary-color));
+    transition: background-color 500ms ease, transform 500ms ease;
+    border-radius: 9999px;
+}
+
+.fullscreen-menu__content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+
+    font-size: 2rem;
+    gap: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    transition: width 500ms ease;
+    background-color: rgba(var(--secondary-color), 0.8);
+}
+
+.fullscreen-menu--open .fullscreen-menu__content {
+    width: 100vw;
+}
+
+.fullscreen-menu--open .burger-button__slice:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.fullscreen-menu--open .burger-button__slice:nth-child(2) {
+    transform: rotate(-45deg) translate(-4px, -4px);
+}
+
+.fullscreen-menu--open .burger-button__slice:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+.theme-toggler {
+    width: 5rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    border-radius: 9999px;
+    color: rgb(var(--primary-color));
+    background-color: rgb(var(--secondary-color));
+
+    transition: background-color 500ms ease, border 500ms ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px rgb(var(--primary-color)) solid;
+}
+
+.theme-toggler__checkbox {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.theme-toggler__icon {
+    font-size: 1.2rem;
+    color: rgb(var(--primary-color));
+    transition: top 500ms ease, color 500ms ease;
+    position: absolute;
+    top: 150%;
+    transform: translate(0, -50%);
+}
+
+.theme-toggler__icon-moon {
+    right: 5%;
+}
+
+.theme-toggler__icon-sun {
+    top: 50%;
+    left: 5%;
+}
+
+.theme-toggler__checkbox:checked + .theme-toggler__icons .theme-toggler__icon-moon {
+    top: 50%;
+}
+
+.theme-toggler__checkbox:checked + .theme-toggler__icons .theme-toggler__icon-sun {
+    top: -100%;
+}
+
+.section {
+    min-height: calc(100vh - var(--header-height));
+    padding: 1rem 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section__heading {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.section__heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    transition: background-color 500ms ease, width 1s ease;
+    background-color: rgb(var(--primary-color));
+    height: 2px;
+}
+
+.section--seen .section__heading::after {
+    width: 100%;
+}
+
+.section__content {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 500ms ease, transform 500ms ease;
+    transition-delay: 500ms;
+}
+
+.section--seen .section__content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro {
+    height: 100vh;
+    background: url("../public/background/sky.jpg");
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    position: relative;
+}
+
+.intro::after {
+    z-index: -10;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, black, transparent);
+}
+
+.intro .section__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro .section__content-proceed-button {
+    color: white;
+    font-size: 3rem;
+    transition: scale 200ms ease;
+}
+
+.intro .section__content-proceed-button:hover {
+    scale: 1.2;
+}
+
+.intro__heading {
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.animated-text {
+    display: flex;
+}
+
+.about {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__content-image {
+    min-width: 200px;
+    max-width: 400px;
+    width: 30%;
+}
+
+.about__content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 2rem;
+}
+
+.stack {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.stack-grid__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-all;
+    width: 200px;
+    aspect-ratio: 1;
+    gap: 0.5rem;
+    border: 2px rgb(var(--primary-color)) solid;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.stack-grid__item-title {
+    text-decoration: dotted underline;
+    text-underline-offset: 5px;
+    cursor: default;
+}
+
+.stack-grid__item-hover-card {
+    position: absolute;
+    top: 105%;
+    word-break: keep-all;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    background-color: rgb(var(--secondary-color));
+    border: 1px rgb(var(--primary-color)) solid;
+    border-radius: 1rem;
+    width: 120%;
+    padding: 0.2rem 0.1rem;
+}
+
+.stack-grid__item-title:hover + .stack-grid__item-hover-card {
+    opacity: 1;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+}
+
+.carousel__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(var(--primary-color));
+}
+
+.carousel__content {
+    width: calc(300px * 3);
+    overflow: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+}
+
+.carousel__content-item {
+    user-select: none;
+    flex-shrink: 0;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding-bottom: 15px;
+}
+
+.carousel__content-item-thumbnail {
+    width: 90%;
+}
+
+.carousel__content-item-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.carousel__content-item-stack-icon {
+    font-size: 1.5rem;
+}
+
+.carousel__content-item-actions {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.contacts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacts__list-item {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

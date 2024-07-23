@@ -1,0 +1,21 @@
+* {
+    font-family: "Montserrat";
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Reenie-Beanie";
+    src: url("../public/fonts/ReenieBeanie-Regular.ttf");
+    font-weight: normal;
+}

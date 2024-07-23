@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    class="dark"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <meta
+            name="description"
+            content="Портфолио junior frontend-разработчика"
+        />
+
+        <link
+            rel="icon"
+            href="public/icons/favicon.ico"
+        />
+        <link
+            rel="stylesheet"
+            href="styles/style.css"
+        />
+
+        <script
+            defer
+            src="scripts/SectionRelatedScripts.js"
+        ></script>
+        <script
+            defer
+            src="scripts/Menu.js"
+        ></script>
+        <script
+            defer
+            src="scripts/ThemeToggler.js"
+        ></script>
+
+        <script
+            defer
+            src="https://kit.fontawesome.com/155ea3918a.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>portfolio</title>
+    </head>
+    <body>
+        <header class="header">
+            <a
+                class="logo"
+                href="/"
+            >
+                jqvelin
+            </a>
+
+            <div class="header__interactive">
+                <nav class="header__navigation">
+                    <ul class="header__navigation-links">
+                        <li>
+                            <a
+                                href="#about"
+                                class="header__navigation-link"
+                                >Обо мне</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#stack"
+                                class="header__navigation-link"
+                                >Мой стэк</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#projects"
+                                class="header__navigation-link"
+                                >Мои проекты</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#contacts"
+                                class="header__navigation-link"
+                                >Связаться со мной</a
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="fullscreen-menu">
+                        <menu class="fullscreen-menu__content">
+                            <li class="header__navigation-link">
+                                <a href="#about">Обо мне</a>
+                            </li>
+                            <li class="header__navigation-link">
+                                <a href="#stack">Мой стэк</a>
+                            </li>
+                            <li class="header__navigation-link">
+                                <a href="#projects">Мои проекты</a>
+                            </li>
+                            <li class="header__navigation-link">
+                                <a href="#contacts">Связаться со мной</a>
+                            </li>
+
+                            <div class="theme-toggler">
+                                <input
+                                    type="checkbox"
+                                    class="theme-toggler__checkbox"
+                                />
+                                <div class="theme-toggler__icons">
+                                    <i class="theme-toggler__icon-moon theme-toggler__icon fa-solid fa-moon"></i>
+                                    <i class="theme-toggler__icon-sun theme-toggler__icon fa-solid fa-sun"></i>
+                                </div>
+                            </div>
+                        </menu>
+                        <div
+                            class="fullscreen-menu__burger-button burger-button"
+                        >
+                            <div
+                                class="fullscreen-menu__burger-button burger-button__slice"
+                            ></div>
+                            <div
+                                class="fullscreen-menu__burger-button burger-button__slice"
+                            ></div>
+                            <div
+                                class="fullscreen-menu__burger-button burger-button__slice"
+                            ></div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="theme-toggler">
+                    <input
+                        type="checkbox"
+                        class="theme-toggler__checkbox"
+                    />
+                    <div class="theme-toggler__icons">
+                        <i class="theme-toggler__icon-moon theme-toggler__icon fa-solid fa-moon"></i>
+                        <i class="theme-toggler__icon-sun theme-toggler__icon fa-solid fa-sun"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro section">
+                <div class="section__content">
+                    <h1 class="intro__heading">
+                        Артём Цыганов<span class="animated-text">
+                            <span>F</span>
+                            <span>r</span>
+                            <span>o</span>
+                            <span>n</span>
+                            <span>t</span>
+                            <span>e</span>
+                            <span>n</span>
+                            <span>d</span>
+                        </span>
+                        разработчик
+                    </h1>
+                    <a href="#about" class="section__content-proceed-button">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+            </section>
+            <section
+                class="about section"
+                id="about"
+            >
+                <h2 class="section__heading">Обо мне</h2>
+                <div class="section__content about__content">
+                    <div class="about__content-text">
+                        <p>
+                            Привет, меня зовут Артём, добро пожаловать в моё
+                            портфолио!
+                        </p>
+                        <p>
+                            Я - начинающий Frontend-разработчик, который изучает
+                            новые технологии, пишет пет-проекты и хочет
+                            трудоустроиться : )
+                        </p>
+                        <p>
+                            Ниже вы можете ознакомиться со стэком технологий,
+                            которые я использую, и с моими работами. Enjoy!
+                        </p>
+                    </div>
+                    <img
+                        src="public/me.avif"
+                        class="about__content-image"
+                        alt="photo of myself"
+                        loading="lazy"
+                    />
+                </div>
+            </section>
+            <section
+                class="stack section"
+                id="stack"
+            >
+                <h2 class="section__heading">Мой стэк технологий</h2>
+                <div class="section__content about__content">
+                    <div class="stack-grid">
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-brands fa-html5 fa-3x"></i>
+                            <p>HTML</p>
+                            <div class="stack-grid__item-hover-card">
+                                Все non-deprecated элементы разметки,
+                                SEO-оптимизация
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-brands fa-css3-alt fa-3x"></i>
+                            <p class="stack-grid__item-title">CSS</p>
+                            <div class="stack-grid__item-hover-card">
+                                Все значения display, position, управление
+                                UI-характеристиками элемента, переходы и базовые
+                                анимации, @ запросы
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-brands fa-sass fa-3x"></i>
+                            <p class="stack-grid__item-title">Sass</p>
+                            <div class="stack-grid__item-hover-card">
+                                Переменные, миксины, вложенные стили
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-solid fa-wind fa-3x"></i>
+                            <p class="stack-grid__item-title">Tailwind CSS</p>
+                            <div class="stack-grid__item-hover-card">
+                                Все свойства CSS, псевдоклассы, кастомные стили,
+                                темы, оптимизация под разные экраны
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-brands fa-js fa-3x"></i>
+                            <p class="stack-grid__item-title">JavaScript</p>
+                            <div class="stack-grid__item-hover-card">
+                                ООП, DOM-манипуляции, базовые Web API
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-solid fa-strikethrough fa-3x"></i>
+                            <p class="stack-grid__item-title">TypeScript</p>
+                            <div class="stack-grid__item-hover-card">
+                                Tuples, enums, встроенные типы (Omit, Pick и
+                                т.д.)
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-brands fa-react fa-3x"></i>
+                            <p class="stack-grid__item-title">React</p>
+                            <div class="stack-grid__item-hover-card">
+                                Основы классовых компонентов, функциональные
+                                компоненты, все часто используемые хуки, router
+                            </div>
+                        </div>
+                        <div class="stack-grid__item">
+                            <i class="stack-grid__item-icon fa-solid fa-n fa-3x"></i>
+                            <p class="stack-grid__item-title">Next.js</p>
+                            <div class="stack-grid__item-hover-card">
+                                App Router, Client Components, Server
+                                Components, CSR, SSR, SSG, ISR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="projects section"
+                id="projects"
+            >
+                <h2 class="section__heading">Мои проекты</h2>
+                <div class="section__content projects__content">
+                    <div class="carousel">
+                        <button
+                            class="carousel__scroll-left-button carousel__button"
+                            aria-label="Scroll left"
+                        >
+                            <i class="fa-solid fa-angle-left"></i>
+                        </button>
+                            <ul class="carousel__content">
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/swim-academy.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="swim academy"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Swim Academy
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Школа плавания
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-solid fa-wind"></i>
+                                        <i class="carousel__content-item-stack-icon fa-solid fa-n"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/swim-academy/"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://swim-academy.vercel.app/"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/wordle.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="wordle"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Wordle
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Популярная логическая игра
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-sass"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/react_wordle/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://jqvelin.github.io/react_wordle/"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/nexterria.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="nexterria"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Nexterria
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Пародия на сайт пиццерии
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-solid fa-wind"></i>
+                                        <i class="carousel__content-item-stack-icon fa-solid fa-n"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/nexterria"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://nexterria.vercel.app/"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/minesweeper.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="minesweeper"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Minesweeper
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Игра на внимательность
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-sass"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/react_minesweeper"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://jqvelin.github.io/react_minesweeper"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/checkers.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="checkers"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Checkers
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Классические шашки
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-sass"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/react_checkers"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://jqvelin.github.io/react_checkers"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        src="public/projects/sorting-algorithms-visualized.avif"
+                                        class="carousel__content-item-thumbnail"
+                                        alt="sorting algorithms visualized"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Sorting Algorithms Visualized
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Наглядный пример работы алгоритмов
+                                        сортировки
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-sass"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/sorting_algorithms_visualized"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://jqvelin.github.io/sorting_algorithms_visualized"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="carousel__content-item">
+                                    <img
+                                        class="carousel__content-item-thumbnail"
+                                        class="carousel__content-item-thumbnail"
+                                        src="public/projects/snake.avif"
+                                        alt="snake game"
+                                    />
+                                    <span class="carousel__content-item-title">
+                                        Snake
+                                    </span>
+                                    <span class="carousel__content-item-description">
+                                        Простая реализация змейки на React
+                                    </span>
+                                    <div class="carousel__content-item-stack">
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-react"></i>
+                                        <i class="carousel__content-item-stack-icon fa-brands fa-sass"></i>
+                                    </div>
+                                    <div class="carousel__content-item-actions">
+                                        <a
+                                            href="https://github.com/jqvelin/react_snake"
+                                            target="_blank"
+                                        >
+                                            <i class="fa-brands fa-github"></i>
+                                            <span> Просмотреть код </span>
+                                        </a>
+                                        <a
+                                            href="https://jqvelin.github.io/react_snake"
+                                            target="_blank"
+                                        >
+                                            <i
+                                                class="fa-solid fa-up-right-from-square"
+                                            ></i>
+                                            <span> Открыть </span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        <button
+                            class="carousel__scroll-right-button carousel__button"
+                            aria-label="Scroll right"
+                        >
+                            <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="contacts section"
+                id="contacts"
+            >
+                <h2 class="section__heading">Связаться со мной</h2>
+                <div class="section__content">
+                    <ul class="contacts__list">
+                        <li class="contacts__list-item">
+                            <a href="mailto:asterionblaze@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>asterionblaze@gmail.com</span>
+                            </a>
+                        </li>
+                        <li class="contacts__list-item">
+                            <a href="https://t.me/xprada666">
+                                <i class="fa-brands fa-telegram"></i>
+                                <span>@xprada666</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>jqvelin, 2024</footer>
+    </body>
+</html>
