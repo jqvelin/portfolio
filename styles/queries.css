@@ -17,6 +17,10 @@
         width: 150px !important;
     }
 
+    .stack-grid__item-hover-card {
+        top: 50% !important;
+    }
+
     .carousel__content {
         width: 600px !important;
     }

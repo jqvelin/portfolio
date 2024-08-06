@@ -336,16 +336,17 @@ body.scroll-locked {
 
 .stack-grid__item-hover-card {
     position: absolute;
-    top: 105%;
-    word-break: keep-all;
-    z-index: 10;
+    top: 80%;
+    word-break: normal;
+    z-index: 100;
     opacity: 0;
-    transition: opacity 500ms ease;
+    transition: opacity 300ms ease;
     background-color: rgb(var(--secondary-color));
     border: 1px rgb(var(--primary-color)) solid;
     border-radius: 1rem;
     width: 120%;
     padding: 0.2rem 0.1rem;
+    pointer-events: none;
 }
 
 .stack-grid__item-title:hover + .stack-grid__item-hover-card {
