@@ -1,9 +1,11 @@
 const burgerButton = document.querySelector('.burger-button')
 const menu = document.querySelector('.fullscreen-menu')
+const menuLinks = menu.querySelectorAll('a')
 
-burgerButton.addEventListener('click', handleOpenFullscreenMenu)
+burgerButton.addEventListener('click', handleFullscreenMenuState)
+menuLinks.forEach(link => link.addEventListener('click', handleFullscreenMenuState))
 
-function handleOpenFullscreenMenu() {
+function handleFullscreenMenuState() {
     if (!menu.classList.contains('fullscreen-menu--open')) {
         menu.classList.add('fullscreen-menu--open')
         document.body.classList.add('scroll-locked')

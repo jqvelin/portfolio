@@ -42,8 +42,7 @@ body.scroll-locked {
     background-color: rgba(var(--secondary-color), 0.8);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    height: var(--header-height);
-    overflow: hidden;
+    height: clamp(3.5rem, var(--header-height), 10rem);
     transition: top 500ms ease, background-color 500ms ease;
     display: flex;
     align-items: center;
@@ -110,7 +109,7 @@ body.scroll-locked {
     white-space: nowrap;
 
     transition: width 500ms ease;
-    background-color: rgba(var(--secondary-color), 0.8);
+    background-color: rgba(var(--secondary-color), 0.9);
 }
 
 .fullscreen-menu--open .fullscreen-menu__content {
