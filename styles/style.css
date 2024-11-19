@@ -204,7 +204,7 @@ body.scroll-locked {
     height: 2px;
 }
 
-.section--seen .section__heading::after {
+.section--visited .section__heading::after {
     width: 100%;
 }
 
@@ -215,7 +215,7 @@ body.scroll-locked {
     transition-delay: 500ms;
 }
 
-.section--seen .section__content {
+.section--visited .section__content {
     opacity: 1;
     transform: translateY(0);
 }

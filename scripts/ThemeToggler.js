@@ -1,3 +1,4 @@
+// For both mobile and desktop variants
 const themeTogglers = document.querySelectorAll('.theme-toggler input[type="checkbox"]')
 
 themeTogglers.forEach(toggler => {
@@ -5,41 +6,26 @@ themeTogglers.forEach(toggler => {
 })
 
 function handleChangeTheme(themeToggler) {
-    if (themeToggler.checked) {
-        document.documentElement.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-        themeTogglers.forEach(toggler => {
-            toggler.checked = true
-        })
-    } else {
-        document.documentElement.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-        themeTogglers.forEach(toggler => {
-            toggler.checked = false
-        })
-    }
+    if (themeToggler.checked) setTheme("dark")
+    else setTheme("light")
 }
 
 function checkPreferredTheme() {
     if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.classList.remove('dark')
-        themeTogglers.forEach(toggler => {
-            toggler.checked = false
-        })
+        setTheme('light')
     } else {
         const isDarkThemePreferred = window.matchMedia('(prefers-color-scheme:dark)').matches
-        if (isDarkThemePreferred) {
-            document.documentElement.classList.add('dark')
-            themeTogglers.forEach(toggler => {
-                toggler.checked = true
-            })
-        } else {
-            document.documentElement.classList.remove('dark')
-            themeTogglers.forEach(toggler => {
-                toggler.checked = false
-            })
-        }
+        if (isDarkThemePreferred) setTheme("dark")
+        else setTheme('light', false)
     } 
+}
+
+function setTheme(theme, persist = true) {
+    document.documentElement.classList[theme === "dark" ? "add" : "remove"]('dark')
+    persist && localStorage.setItem('theme', theme)
+    themeTogglers.forEach(toggler => {
+        toggler.checked = theme === "dark"
+    })
 }
 
 checkPreferredTheme()
