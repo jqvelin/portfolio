@@ -19,7 +19,7 @@ function setSectionVisited(entries) {
 // Letters animation of intro section
 
 const introSection = sections.find(section => section.getAttribute("id") === 'intro')
-const animatedTextLetters = document.querySelectorAll('.animated-text span')
+const animatedTextLetters = document.querySelectorAll('.animated-text img')
 
 const animatedTextObserver = new IntersectionObserver(runAnimation, {
     threshold: 0.45
