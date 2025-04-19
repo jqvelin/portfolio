@@ -389,6 +389,7 @@ body.scroll-locked {
 
 .carousel__content-item-thumbnail {
     width: 90%;
+    object-fit: cover;
 }
 
 .carousel__content-item-title {
